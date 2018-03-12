@@ -5,6 +5,6 @@ Severity: %severity
 Unique-ID: %uid
 Rule: {if %name}%name{else}%rule{/if}
 {if %faults}Faults:
-{foreach %faults}  #%key: %value.string\r\n
-Message: %services.service_message\r\n
+{foreach %faults}  #%key: %value.string
+Message: %services.service_message
 {/foreach}{/if}Alert sent to: {foreach %contacts}%value <%key> {/foreach}
