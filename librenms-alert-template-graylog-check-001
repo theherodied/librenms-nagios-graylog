@@ -2,7 +2,6 @@
 <h2>{if %state == 1}<span style="color:red;">%severity{/if}
 {if %state == 2}<span style="color:goldenrod;">acknowledged{/if}</span>
 {if %state == 3}<span style="color:green;">recovering{/if}</span>
-</h2>
 {if %state == 0}<span style="color:green;">recovered{/if}</span>
 </h2>
 <b>Host:</b> %hostname<br>
