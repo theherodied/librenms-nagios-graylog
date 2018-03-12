@@ -1,0 +1,6 @@
+Librenms alert codes according to community forum post I found:
+0 ok 
+1 alert 
+2 ack 
+3 better 
+4 worse
