@@ -1,10 +1,18 @@
-%title
-Severity: %severity
-{if %state == 0}Time elapsed: %elapsed
-{/if}Timestamp: %timestamp
-Unique-ID: %uid
-Rule: {if %name}%name{else}%rule{/if}
-{if %faults}Faults:
-{foreach %faults}  #%key: %value.string
-Message: %services.service_message
-{/foreach}{/if}Alert sent to: {foreach %contacts}%value <%key> {/foreach}
+<div style="font-family:Helvetica;">
+<h2>{if %state == 1}<span style="color:red;">%severity{/if}
+{if %state == 2}<span style="color:goldenrod;">acknowledged{/if}</span>
+{if %state == 3}<span style="color:green;">recovering{/if}</span>
+</h2>
+{if %state == 0}<span style="color:green;">recovered{/if}</span>
+</h2>
+<b>Host:</b> %hostname<br>
+<b>Duration:</b> %elapsed<br>
+<br>
+
+{if %faults}                                                                                       
+{foreach %faults}<b>%value.service_desc - %value.service_type</b><br>                                         
+%value.service_message<br>
+<br>                                                                                         
+{/foreach}                                                                                                             
+{/if}
+</div>
